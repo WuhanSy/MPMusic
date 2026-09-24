@@ -26,7 +26,7 @@ class MusicDl(_PluginBase):
 
     plugin_name = "MusicDL音乐"
     plugin_desc = "调用 musicdl 服务搜索、下载音乐，落盘后交给 MoviePilot 整理与刮削入库"
-    plugin_version = "1.0.0"
+    plugin_version = "1.1.0"
     plugin_author = "MusicdlDocker"
     author_url = "https://github.com/CharlesPikachu/musicdl"
     plugin_config_prefix = "musicdl_"
@@ -75,6 +75,15 @@ class MusicDl(_PluginBase):
         return self._enabled
 
     @staticmethod
+    def get_render_mode() -> Tuple[str, str]:
+        """
+        获取插件前端渲染模式
+
+        :return: 渲染模式 vue 与联邦组件产物目录
+        """
+        return "vue", "dist/assets"
+
+    @staticmethod
     def get_command() -> List[Dict[str, Any]]:
         """
         注册插件远程命令
@@ -101,14 +110,14 @@ class MusicDl(_PluginBase):
                 "path": "/search",
                 "endpoint": self.api_search,
                 "methods": ["POST"],
-                "auth": "apikey",
+                "auth": "bear",
                 "summary": "按关键词搜索歌曲",
             },
             {
                 "path": "/download",
                 "endpoint": self.api_download,
                 "methods": ["POST"],
-                "auth": "apikey",
+                "auth": "bear",
                 "summary": "下载歌曲并在落盘后触发整理",
             },
             {

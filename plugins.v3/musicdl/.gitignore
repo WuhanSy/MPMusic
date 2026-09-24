@@ -1,0 +1,10 @@
+node_modules/
+.vite/
+*.log
+
+# 构建产物中宿主不需要上传的文件（见模块联邦指南）
+dist/index.html
+dist/assets/index-*
+dist/assets/date-*
+dist/assets/runtime-*
+dist/assets/__federation_shared_vuetify/
