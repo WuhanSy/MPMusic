@@ -1,0 +1,16 @@
+{
+  "MusicDl": {
+    "name": "MusicDL音乐",
+    "description": "调用 musicdl 服务搜索、下载音乐，落盘后交给 MoviePilot 整理与刮削入库。",
+    "labels": "工具,音乐",
+    "version": "1.0.0",
+    "icon": "",
+    "author": "MusicdlDocker",
+    "level": 1,
+    "release": true,
+    "system_version": ">=3.0.0",
+    "history": {
+      "v1.0.0": "首个版本：代理 musicdl 的 /health、/search、/download，并在落盘后调用 MoviePilot 整理链完成刮削入库。"
+    }
+  }
+}
